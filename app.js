@@ -1,12 +1,12 @@
 var express = require('express');
 var body_parser = require('body-parser');
-var app = express();
 var promise = require('bluebird');
 var pgp = require('pg-promise')({
   promiseLib: promise
-});
+//
 var db = pgp({database: 'restaurant'});
 
+var app = express();
 
 app.set ('view engine', 'hbs');
 const bodyParser = require('body-parser');
@@ -23,7 +23,7 @@ app.get('/search', function(req, resp, next) {
   let query = "SELECT * FROM restaurant WHERE restaurant.name ILIKE '%$1#%'";
   db.any(query, term)
     .then(function(resultsArray) {
-      resp.render('search.hbs', {
+      resp.render('homepage.hbs', {
         results: resultsArray
       });
     })
