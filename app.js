@@ -1,4 +1,5 @@
-var express = require('express');\var body_parser = require('body-parser');
+var express = require('express');
+var body_parser = require('body-parser');
 var app = express();
 var promise = require('bluebird');
 var pgp = require('pg-promise')({
