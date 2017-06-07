@@ -38,14 +38,13 @@ app.get('/restaurant/:id', function(req, resp, next) {
   var query = "SELECT * FROM restaurant WHERE id = $1";
   db.any(query, search)
     .then(function(resultsArray) {
-      response.render('restaurant.hbs', {
-        results: resultsArray
+      resp.render('restaurant.hbs', {
+        restaurant: restaurant
       });
-    })
-  resp.render('restaurant.hbs', {
-    restaurant: restaurant
-  });
-});
+
+    });
+})
+
 
 app.get('/post/:slug', function(request, response) {
   var slug = request.params.slug;
