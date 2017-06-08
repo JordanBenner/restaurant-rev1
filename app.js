@@ -119,6 +119,11 @@ app.post('/login', function (request, response) {
     response.render('login.hbs');
   }
 });
+app.get('/greet/user:slug', function (request, response) {
+  var slug = request.params.slug;
+  response.send('Hello, user: ' + slug);
+});
+
 
 
 
