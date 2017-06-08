@@ -5,8 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "bluebird": "^3.5.0",
+    "crypto": "0.0.3",
     "express": "^4.15.3",
     "morgan": "^1.8.2",
+    "pbkdf2": "^3.0.12",
     "pg-promise": "^5.9.0"
   },
   "devDependencies": {},
