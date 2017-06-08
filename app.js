@@ -10,6 +10,8 @@ var db = pgp({
 });
 
 var app = express();
+var morgan = require('morgan');
+app.use(morgan('dev'));
 
 app.set('view engine', 'hbs');
 // const bodyParser = require('body-parser');
@@ -21,7 +23,7 @@ app.use(session({
   secret: process.env.SECTET_KEY || 'dev',
   resave:true,
   saveUnititalized: false,
-  cookie: {maxAge: 60000}
+  cookie: {maxAge: 600000}
 }));
 //redirect to login //
 app.use(function(req, resp, next){
